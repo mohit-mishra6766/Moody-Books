@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        div {
+            background: rgb(246, 245, 247);
+            width: 30%;
+            height: 25%;
+            text-align: left;
+            padding: 25px;
+            border-width: 11px;
+            border-color: black;
+            float: center;
+            vertical-align: center;
+        }
+        
+        @media screen and (max-width: 350px) {
+            div {
+                width: auto;
+            }
+        }
+        
+        img {
+            border: 2px solid black;
+            border-radius: 6px;
+            transition: .5s;
+        }
+        
+        button {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.1em;
+            border-radius: 10px;
+            background-color: coral;
+        }
+        
+        button:hover {
+            background: rgb(126, 238, 154);
+            border-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2>Book Name</h2>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71Bz8NshEVL.jpg"
+            ) align="left" alt="BookName" style="width:100%;max-width:170px" border>
+
+        <p align="right">
+            <button onclick="window.location.href='';">English</button></p>
+        <p align="right"><button onclick="window.location.href='https:pdflink';">  Hindi  </button></p>
+
+        <p align="right"><button onclick="window.location.href='https:pdflink';">Spanish</button></p>
+        <p align="right"><button onclick="window.location.href='https:pdflink';">Chinese</button></p>
+
+    </div>
+
+</body>
+
+</html>

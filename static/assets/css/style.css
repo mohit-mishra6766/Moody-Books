@@ -1,0 +1,529 @@
+/* Navbar */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#load {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #1e6cc7 center no-repeat url("../images/bookshelf.gif");
+    z-index: 9999;
+}
+#naaam
+{
+  height: 30px; 
+  text-align: center; 
+  background-color: black; 
+  color: white; 
+  top: 0px;
+  font-family: 'Goudy Bookletter 1911', serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 62.5%;
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 1;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    /* padding-left: 3rem; */
+    padding-left: 0rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: yellow;
+    font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+    color: #D483DB;
+}
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: yellow;
+    line-height: 65px;
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #D483DB;
+}
+
+
+/* Home section */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    /* background-image: url('https://www.peterpantraveler.com/wp-content/uploads/2021/07/Girl-Reading-Book-in-Sunset.png'); */
+    background-position: center top;
+    background-size: cover;
+}
+
+.navTrigger {
+    display: none;
+}
+
+.right
+{
+    position: absolute;
+    top: 88%;
+    left: 97%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 68px;
+    border-right: 6px dashed rgba(255, 255, 255, 0.1);
+}
+.arrow
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 40px;
+    width: 6px;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    animation: animate 2s infinite;
+}
+.arrow::before
+{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -6.8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border-bottom: 6px solid #fefe00;
+    border-right: 6px solid #fefe00;
+    transform: rotate(45deg);
+}
+@keyframes animate 
+{
+    0%
+    {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50%
+    {
+        transform: translateY(34px);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translateY(68px);
+        opacity: 0;
+    }
+}
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #2E2336;
+        /*same background color of navbar*/
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        padding: 20px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+
+
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #111;
+}
+
+.myH2 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.myP {
+    text-align: justify;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 20px;
+}
+
+@media all and (max-width:700px) {
+    .myP {
+        padding: 2%;
+    }
+}
+
+
+/* Navbar */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h4 {
+    color: black;
+}
+
+h5 {
+    color: black;
+}
+
+.card {
+    /* margin: 0 auto; */
+    /* float: none; */
+    display: flex;
+    padding: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.25rem;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#mood-checker {
+    padding: 80px;
+}
+
+.btn-signUp {
+    padding: 30px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 15px 0 16px;
+    margin-top: -28px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.25;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.centered:hover {
+    font-size: 2rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.moods {
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(135deg, #81ffef 10%, #f067b4 100%);
+}
+
+.card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    height: 188px;
+    width: 180px;
+}
+
+#moody {
+    margin: 26px;
+}
+
+.book-1-img {
+    width: 15rem;
+    height: auto;
+    padding: 30px 0;
+}
+
+.trending-books {
+    background-image: linear-gradient( to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+}
